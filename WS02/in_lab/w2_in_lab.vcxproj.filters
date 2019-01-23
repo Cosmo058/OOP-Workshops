@@ -29,7 +29,7 @@
     <ClInclude Include="Text.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="TimeKeeper.h">
+    <ClInclude Include="Timekeeper.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
