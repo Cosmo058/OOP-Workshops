@@ -57,6 +57,7 @@ int main (int argc, char* argv[]) {
 		t.recordEvent("Move Constructor ");
         std::cout << "Move Constructor  - d.size = " << d.size() << std::endl;
 
+		t.start();
         a = std::move(d);
 		t.stop();
 		t.recordEvent("Move Assignment  ");
