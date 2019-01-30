@@ -22,6 +22,19 @@ namespace sict {
 		Text(std::string);
 		Text(const Text&);
 		Text& operator=(const Text&);
+
+		//Added from here
+
+		//Move constructor
+		Text(Text&&);
+
+		//The double '&' means a modificable reference to, in this case, a Text obj
+
+		//Move assignment
+		Text& operator=(Text&&);
+
+		//To here
+
 		~Text();
 		size_t size() const;
 	};

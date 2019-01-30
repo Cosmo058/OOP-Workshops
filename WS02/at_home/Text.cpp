@@ -55,6 +55,37 @@ namespace sict {
 		return *this;
 	}
 
+
+	//Added from here
+	Text::Text(Text&& src) {
+		//Copy the number of strings from src into this obj
+		this->total_strings = src.total_strings;
+
+		//Copy the address that src.str holds into the str pointer in this obj
+		this->str = src.str;
+
+		//Initialize the src element, like erasing the data that was passed to this obj
+		src.total_strings = 0;
+		src.str = nullptr;
+	}
+
+	Text& Text::operator=(Text&& src) {
+		if (this != &src) {
+			delete[] str;
+			
+			//Same stuff than above
+			total_strings = src.total_strings;
+			str = src.str;
+
+			src.total_strings = 0;
+			src.str = nullptr;
+		}
+
+		//But in here, instead of asignnig the values to this obj, we return this obj reference
+		return *this;
+	}
+	//To here
+
 	Text::~Text() {
 		delete[] str;
 		str = nullptr;

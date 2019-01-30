@@ -1,0 +1,7 @@
+The main difference between the copy and move operations it is that the move
+operations actually take ownership of the resources that are being passed as
+arguments to the move operator o move constructor. As presented on line 71 of my
+Text.cpp file, the move assignment operator take the ownership of the memory
+allocated for the dynamic resources and actually change the value of the pointer
+that served as argument to a nullptr. This kind of operations is way more
+efficient than make a deep copy.
