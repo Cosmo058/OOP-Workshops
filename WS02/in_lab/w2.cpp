@@ -14,6 +14,7 @@ int main (int argc, char* argv[]) {
 	for (int i = 0; i < argc; i++) {
 		std::cout << argv[i] << ' ';
 	}
+	std::cout << std::endl;
 	if (argc == 1) {
         std::cerr << argv[0] << ": missing file operand\n";
         return 1;
