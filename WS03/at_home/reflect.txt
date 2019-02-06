@@ -1,0 +1,23 @@
+1. The reason to specializing the sum() member function is because due the
+  template mature of the class, there could be the case that the values intended
+  to sum by this function needed to be threated differently. For example, is not
+  the same trying to sum strings (adding spaces between each string) that
+  traying to sum integers or doubles.
+
+2. The reason for specializing the initial value for the initial_value as well,
+   is because initial-safe values are different for each type of varible.
+   empty string for std::string types
+   0 for int or double types
+   nullprt for pointers
+   etc.
+
+3. The reason for defining the class variable outside the class definition, is
+  because we need to specify a declaration of a template each time we are
+  using a template class.
+
+
+-------------Quiz section-------------
+1. Composition is a HAS-A relationship between classes that implement complete ownership.
+2. Aggregation is a COMPOSITION that does not manage the CREATION of the objects it uses.
+3. Association is a SERVICE relationship and does not involve OWNERSHIP of one type by another.
+4. Doe
