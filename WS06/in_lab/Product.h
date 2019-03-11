@@ -14,6 +14,8 @@ namespace sict {
 	class Product : public iProduct {
 	public:
 		Product(int,double);
+		double price() const;
+		void display(std::ostream& os) const;
 	};
 }
 

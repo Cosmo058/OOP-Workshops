@@ -9,9 +9,13 @@
 #define SICT_SALE_H
 
 #include<iostream>
+#include<vector>
+
+#include "iProduct.h"
 
 namespace sict {
 	class Sale {
+		std::vector <iProduct *> products;
 	public:
 		Sale(const char*);
 		void display(std::ostream& os) const;
