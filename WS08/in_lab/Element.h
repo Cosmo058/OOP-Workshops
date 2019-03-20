@@ -1,9 +1,11 @@
 #ifndef SICT_ELEMENT_H
 #define SICT_ELEMENT_H
-// Workshop 8 - Smart Pointers
+// Workshop 8
 // Element.h
-// Chris Szalwinski from Cornel Barna
-// 2019/03/17
+// Student Name : Angel Sanchez
+// Student #: 153582176
+// Student Id: asanchez-valencia
+// 20/Mar/2019
 
 #include <iomanip>
 #include <string>
@@ -39,8 +41,9 @@ namespace sict {
         }
 
 		void display(std::ostream& os) const {
-            os << std::setw(FWC) << code << std::setw(FWP)
-            << price << std::endl;
+            os << std::setw(FWC) << code
+			   << std::setw(FWP) << price
+			   << std::endl;
         }
     };
 
@@ -48,9 +51,7 @@ namespace sict {
         std::string desc;
         double price;
 		int m_id;
-		static size_t idGenerator;
-		// this variable is used to print trace messages from
-		//     constructors/destructor
+		static size_t idGenerator; // this variable is used to print trace messages from constructors/destructor
 		static bool Trace;
 
 		Product() {
@@ -87,6 +88,21 @@ namespace sict {
 			   << std::setw(FWP) << price
 			   << std::endl;
         }
+
+		/*
+		Function name: validate
+		Goal/purpose: verify if the price storaged is negative or not
+		Intputs:
+			Nothing
+
+		Output:
+			Nothing, but it could throw an exception
+		*/
+		void validate() {
+			if (this->price < 0) {
+				throw std::string("*** Negative prices are invalid ***");
+			}
+		}
     };
 }
 #endif
