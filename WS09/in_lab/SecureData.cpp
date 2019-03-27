@@ -1,7 +1,9 @@
-// Workshop 9 - Multi-Threading
+// Workshop 9
 // SecureData.cpp
-// Chris Szalwinski after Cornel Barna
-// 2019/03/19
+// Student Name : Angel Sanchez
+// Student #: 153582176
+// Student Id: asanchez-valencia
+// 27/Mar/2019
 
 #include <iostream>
 #include <fstream>
@@ -72,34 +74,50 @@ namespace sict {
 			throw std::string("\n***No data stored***\n");
 		else if (!encoded)
 			throw std::string("\n***Data is not encoded***\n");
-		else
-		{
-			// TODO: open a binary file for writing
+		else{
+			//Opening file for writing in binary mode
+			std::ofstream f(file, std::ios::binary);
 
-
-
-			// TODO: write data into the binary file
-			//         and close the file
-
-
+			//Write data storage in memory to file
+			f.write(text, nbytes);
+			f.close();
 		}
 	}
 
 	void SecureData::restore(const char* file, char key) {
-		// TODO: open binary file for reading
+		//Opening binary file for reading
+		std::ifstream f(file, std::ios::binary);
+		if (!f) {
+			throw std::string("\n***Failed to open file ") + std::string(file) + std::string(" ***\n");
+		}
 
 
+		//Allocating memory here for the file content
+		nbytes = 0;
+		f >> std::noskipws;
+		while (f.good()) {
+			char c;
+			f >> c;
+			nbytes++;
+		}
+		nbytes--;
+		f.clear();
+		f.seekg(0, std::ios::beg);
 
-		// TODO: - allocate memory here for the file content
+		text = new char[nbytes + 1];
 
 
+		//Reading the content of the binary file
+		int i = 0;
+		while (f.good()) {
+			f >> text[i++];
+		}
 
-		// TODO: - read the content of the binary file
-
+		text[--i] = '\0';
 
 
 		*ofs << "\n" << nbytes << " bytes copied from binary file "
-			<< file << " into memory.\n";
+			 << file << " into memory.\n";
 
 		encoded = true;
 
