@@ -32,16 +32,32 @@ namespace sict {
 		size_t size() const { return list.size(); }
 		const T& operator[](size_t i) const { return list[i]; }
 
-		// TODO: Overload the += operator with a smart pointer
-		//       as a second operand.
+		/*
+		Function name: += (overloaded operator) //smartPointer
+		Goal/purpose:	Overload the operator to storage and element into the list
+		Intputs:
+		std::unique_ptr<T>& p: A smart point that owns the obj to be added to the list
+
+		Output:
+		Nothing. Element is storaged
+		*/
+		void operator+=(std::unique_ptr<T>& p) {
+			list.push_back(*p);
+		}
 
 
+		/*
+		Function name: += (overloaded operator)
+		Goal/purpose:	Overload the operator to storage and element into the list
+		Intputs:
+		cosnt T* obj: A reference to a T object to be storage into the List
 
-
-		// TODO: Overload the += operator with a raw pointer
-		//       as a second operand.
-
-
+		Output:
+		Nothing. Element is storaged
+		*/
+		void operator+=(const T* obj) {
+			list.push_back(*obj);
+		}
 
 
 

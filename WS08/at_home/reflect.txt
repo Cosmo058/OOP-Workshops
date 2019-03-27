@@ -1,0 +1,11 @@
+The advantage that smart pointer syntax provides:
+  Smart pointers owns and manages another object through a pointer and disposes
+  of that object when the smart pointer goes out of scope.
+
+List the difference between raw and smart pointer syntax in your solution:
+  Smart pointer manages the release of memory by themselves, so there is no need
+  to delete[] and point the pointer to nullptr.
+
+
+Quiz part
+Nothing to correct, I got 10/10
