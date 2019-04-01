@@ -1,19 +1,15 @@
-// Workshop 9 - Multi-Threading
-// SecureData.h
-// Chris Szalwinski after Cornel Barna
-// 2019/03/19
-
 #ifndef SICT_SECUREDATA_H
 #define SICT_SECUREDATA_H
 
 #include <iostream>
 
-namespace sict
-{
+namespace sict{
+
 	class Cryptor {
 	public:
 		char operator()(char in, char key) const { return in ^ key; }
 	};
+
 	void converter(char*, char, int, const Cryptor&);
 
 	class SecureData {

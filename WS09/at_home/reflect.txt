@@ -1,0 +1,17 @@
+- Binary file operations: The file is open using the data in a raw/binary state
+  rather than interpreting those values as ASCII characters. In this way we can
+  store any type of data.
+
+- Binding a function to its arguments is use to create function objects which
+  arguments are bound to a value or a placeholder that will be filled later by
+  calling the function.
+
+- Multi-threading allows us to execute certain part of the code at the same time
+  in order to get the work done faster using multiple light-version of a program
+  that share common resources and all together deliver a single result.
+
+-Quiz reflections:
+  2. Its tasks and its communications
+  4. The transfer of information to or from a processor
+  7. Proportional
+   
